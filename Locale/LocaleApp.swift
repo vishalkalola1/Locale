@@ -11,7 +11,7 @@ import SwiftUI
 struct LocaleApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SearchPlacesView()
         }
     }
 }
