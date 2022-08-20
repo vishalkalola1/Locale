@@ -11,6 +11,13 @@
 		C96E941628AE8AA1000ED6D2 /* SearchPlacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96E941528AE8AA1000ED6D2 /* SearchPlacesView.swift */; };
 		C96E941828AE8AA2000ED6D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C96E941728AE8AA2000ED6D2 /* Assets.xcassets */; };
 		C96E941B28AE8AA2000ED6D2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C96E941A28AE8AA2000ED6D2 /* Preview Assets.xcassets */; };
+		C9A8FF1728AE8BAB00CC40F2 /* SearchPlacesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A8FF1628AE8BAB00CC40F2 /* SearchPlacesViewModel.swift */; };
+		C9A8FF1A28AE8BEC00CC40F2 /* PlacesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A8FF1928AE8BEC00CC40F2 /* PlacesRepository.swift */; };
+		C9A8FF2128AE8D8500CC40F2 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A8FF2028AE8D8500CC40F2 /* NetworkProvider.swift */; };
+		C9A8FF2728AE8EB000CC40F2 /* PlacesSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A8FF2328AE8EB000CC40F2 /* PlacesSearchService.swift */; };
+		C9A8FF2928AE8EB000CC40F2 /* CommonServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A8FF2528AE8EB000CC40F2 /* CommonServices.swift */; };
+		C9A8FF2D28AE935100CC40F2 /* PlacesResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A8FF2C28AE935100CC40F2 /* PlacesResult.swift */; };
+		C9A8FF3428AE982B00CC40F2 /* NetworkProvider in Frameworks */ = {isa = PBXBuildFile; productRef = C9A8FF3328AE982B00CC40F2 /* NetworkProvider */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +26,13 @@
 		C96E941528AE8AA1000ED6D2 /* SearchPlacesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlacesView.swift; sourceTree = "<group>"; };
 		C96E941728AE8AA2000ED6D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C96E941A28AE8AA2000ED6D2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C9A8FF1628AE8BAB00CC40F2 /* SearchPlacesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlacesViewModel.swift; sourceTree = "<group>"; };
+		C9A8FF1928AE8BEC00CC40F2 /* PlacesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesRepository.swift; sourceTree = "<group>"; };
+		C9A8FF2028AE8D8500CC40F2 /* NetworkProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
+		C9A8FF2328AE8EB000CC40F2 /* PlacesSearchService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesSearchService.swift; sourceTree = "<group>"; };
+		C9A8FF2528AE8EB000CC40F2 /* CommonServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonServices.swift; sourceTree = "<group>"; };
+		C9A8FF2C28AE935100CC40F2 /* PlacesResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesResult.swift; sourceTree = "<group>"; };
+		C9A8FF3528AE986200CC40F2 /* NetworkProvider */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = NetworkProvider; path = Packages/NetworkProvider; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9A8FF3428AE982B00CC40F2 /* NetworkProvider in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -35,8 +50,10 @@
 		C96E940728AE8AA1000ED6D2 = {
 			isa = PBXGroup;
 			children = (
+				C9A8FF3128AE981F00CC40F2 /* Packages */,
 				C96E941228AE8AA1000ED6D2 /* Locale */,
 				C96E941128AE8AA1000ED6D2 /* Products */,
+				C9A8FF2E28AE978000CC40F2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,6 +68,10 @@
 		C96E941228AE8AA1000ED6D2 /* Locale */ = {
 			isa = PBXGroup;
 			children = (
+				C9A8FF2B28AE934200CC40F2 /* Models */,
+				C9A8FF2228AE8EB000CC40F2 /* Services */,
+				C9A8FF1B28AE8C0100CC40F2 /* NetworkProvider */,
+				C9A8FF1828AE8BCD00CC40F2 /* Repositories */,
 				C9A8FF1528AE8B3700CC40F2 /* SearchPlaces */,
 				C96E941328AE8AA1000ED6D2 /* LocaleApp.swift */,
 				C96E941728AE8AA2000ED6D2 /* Assets.xcassets */,
@@ -71,8 +92,57 @@
 			isa = PBXGroup;
 			children = (
 				C96E941528AE8AA1000ED6D2 /* SearchPlacesView.swift */,
+				C9A8FF1628AE8BAB00CC40F2 /* SearchPlacesViewModel.swift */,
 			);
 			path = SearchPlaces;
+			sourceTree = "<group>";
+		};
+		C9A8FF1828AE8BCD00CC40F2 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				C9A8FF1928AE8BEC00CC40F2 /* PlacesRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		C9A8FF1B28AE8C0100CC40F2 /* NetworkProvider */ = {
+			isa = PBXGroup;
+			children = (
+				C9A8FF2028AE8D8500CC40F2 /* NetworkProvider.swift */,
+			);
+			path = NetworkProvider;
+			sourceTree = "<group>";
+		};
+		C9A8FF2228AE8EB000CC40F2 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C9A8FF2328AE8EB000CC40F2 /* PlacesSearchService.swift */,
+				C9A8FF2528AE8EB000CC40F2 /* CommonServices.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C9A8FF2B28AE934200CC40F2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C9A8FF2C28AE935100CC40F2 /* PlacesResult.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C9A8FF2E28AE978000CC40F2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C9A8FF3128AE981F00CC40F2 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				C9A8FF3528AE986200CC40F2 /* NetworkProvider */,
+			);
+			name = Packages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -91,6 +161,9 @@
 			dependencies = (
 			);
 			name = Locale;
+			packageProductDependencies = (
+				C9A8FF3328AE982B00CC40F2 /* NetworkProvider */,
+			);
 			productName = Locale;
 			productReference = C96E941028AE8AA1000ED6D2 /* Locale.app */;
 			productType = "com.apple.product-type.application";
@@ -119,6 +192,8 @@
 				Base,
 			);
 			mainGroup = C96E940728AE8AA1000ED6D2;
+			packageReferences = (
+			);
 			productRefGroup = C96E941128AE8AA1000ED6D2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -146,7 +221,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C96E941628AE8AA1000ED6D2 /* SearchPlacesView.swift in Sources */,
+				C9A8FF1A28AE8BEC00CC40F2 /* PlacesRepository.swift in Sources */,
 				C96E941428AE8AA1000ED6D2 /* LocaleApp.swift in Sources */,
+				C9A8FF1728AE8BAB00CC40F2 /* SearchPlacesViewModel.swift in Sources */,
+				C9A8FF2928AE8EB000CC40F2 /* CommonServices.swift in Sources */,
+				C9A8FF2728AE8EB000CC40F2 /* PlacesSearchService.swift in Sources */,
+				C9A8FF2128AE8D8500CC40F2 /* NetworkProvider.swift in Sources */,
+				C9A8FF2D28AE935100CC40F2 /* PlacesResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,8 +356,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Locale/Preview Content\"";
+				DEVELOPMENT_TEAM = SVKXCL5QB5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationUsageDescription = "Get near by places by allowing location";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Get near by places by allowing location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -288,7 +372,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.een.Locale;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Locale;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -303,8 +387,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Locale/Preview Content\"";
+				DEVELOPMENT_TEAM = SVKXCL5QB5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationUsageDescription = "Get near by places by allowing location";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Get near by places by allowing location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -316,7 +403,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.een.Locale;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Locale;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -345,6 +432,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C9A8FF3328AE982B00CC40F2 /* NetworkProvider */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NetworkProvider;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C96E940828AE8AA1000ED6D2 /* Project object */;
 }
