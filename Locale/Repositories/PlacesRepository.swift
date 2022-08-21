@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import NetworkProvider
 
 protocol PlacesRepositoryProtocol {
     typealias PlacesResultHandler = (Result<PlacesResult, LocalError>) -> Void

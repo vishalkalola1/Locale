@@ -8,10 +8,5 @@
 import Foundation
 
 public protocol NetworkProviderProtocol {    
-    func request<T: Decodable>(
-        dataType: T.Type,
-        service: NetworkService,
-        onQueue: DispatchQueue,
-        completion: @escaping (Result<T, LocalError>) -> Void
-    )
+    func request<T: Decodable>(dataType: T.Type, service: NetworkService, onQueue: DispatchQueue, completion: @escaping (Result<T, LocalError>) -> Void)
 }

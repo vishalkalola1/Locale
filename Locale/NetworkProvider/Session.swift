@@ -15,11 +15,7 @@ public class Session: SessionProtocol {
         self.session = session
     }
     
-    public func dataTask<T: Decodable>(
-        _ request: URLRequest,
-        dataType: T.Type,
-        completion: @escaping (Result<T, LocalError>) -> Void
-    ) -> URLSessionDataTask {
+    public func dataTask<T: Decodable>(_ request: URLRequest, dataType: T.Type, completion: @escaping (Result<T, LocalError>) -> Void) -> URLSessionDataTask {
         return session.dataTask(with: request) { [weak self] data, response, error in
             let result = Result { [weak self] () throws -> T in
                 guard let self = self else {

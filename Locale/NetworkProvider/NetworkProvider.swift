@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import NetworkProvider
 
 struct NetworkProvider: NetworkProviderProtocol {
     
