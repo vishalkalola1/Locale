@@ -20,4 +20,8 @@ enum CommonMovieService {
     static var apiKey: String {
         "fsq3zEYYPX3EvCvLn7rTPQK/Lu/CGjMP6GJebip0R11wM20="
     }
+    
+    static var limit: String {
+        "50"
+    }
 }

@@ -55,9 +55,12 @@ class Place: Codable, Identifiable, ObservableObject {
     let location: Location?
     let name: String?
     let timezone: String?
+    @Published var isExpand: Bool = false
     
-    var coordinate: CLLocationCoordinate2D {
-        CLLocationCoordinate2D(latitude: geocodes!.main!.latitude!, longitude: geocodes!.main!.longitude!)
+    var coordinate: CLLocationCoordinate2D? {
+        guard let lat = geocodes?.latitude,
+              let long = geocodes?.longitude else { return nil }
+        return CLLocationCoordinate2D(latitude: lat, longitude: long)
     }
     
     var imageUrl: URL? {
@@ -102,6 +105,14 @@ struct Icon: Codable {
 // MARK: - Geocodes
 struct Geocodes: Codable {
     let main, roof: Center?
+    
+    var latitude: Double? {
+        main?.latitude
+    }
+
+    var longitude: Double? {
+        main?.longitude
+    }
 }
 
 // MARK: - Location

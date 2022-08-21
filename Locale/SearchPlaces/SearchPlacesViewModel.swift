@@ -7,7 +7,8 @@
 
 import Foundation
 import NetworkProvider
-import MapKit
+import Combine
+import MapKit.MKGeometry
 
 final class SearchPlacesViewModel: ObservableObject {
     
@@ -16,11 +17,18 @@ final class SearchPlacesViewModel: ObservableObject {
     @Published var mapRegion: MKCoordinateRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 52.3595529, longitude: 4.8944762), span: MKCoordinateSpan(latitudeDelta: 0.8, longitudeDelta: 0.8))
     
     private let placesRepository: PlacesRepositoryProtocol
+    private var cancellable: AnyCancellable?
+    
     public var locationManager: LocationManager {
         LocationManager.shared
     }
     
+    var searchStyle: [Segment.ViewStyle] {
+        [.Map, .List]
+    }
+    
     private var userLocation: String = ""
+    private var lastRadius: String = ""
     
     init(placesRepository: PlacesRepositoryProtocol = PlacesRepository()) {
         self.placesRepository = placesRepository
@@ -29,58 +37,31 @@ final class SearchPlacesViewModel: ObservableObject {
     }
     
     func configureLocationObserver() {
-        _ = locationManager.$location.sink { location in
+        cancellable = locationManager.$coordinate.sink { location in
             guard let location = location else { return }
             let latLong = "\(location.latitude),\(location.longitude)"
             self.userLocation = latLong
-            //self.mapRegion = MKCoordinateRegion(center: location, span: MKCoordinateSpan(latitudeDelta: 0.8, longitudeDelta: 0.8))
+            self.mapRegion = MKCoordinateRegion(center: location, span: MKCoordinateSpan(latitudeDelta: 0.8, longitudeDelta: 0.8))
+            self.searchPlaces(self.lastRadius)
         }
     }
     
-    func searchPlaces(_ radius: String) {
+    private func updateRadius(newRadius: String) {
+        if lastRadius != newRadius {
+            lastRadius = newRadius
+        }
+    }
+    
+    func searchPlaces(_ radius: String = "") {
+        updateRadius(newRadius: radius)
         placesRepository.searchPlaces(by: radius, latLong: userLocation) { [weak self] results in
             guard let self = self else { return }
             do {
                 let placesResult = try results.get()
-                self.places = placesResult.places ?? []
-                self.mapRegion = MKCoordinateRegion(center: self.places.first!.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.8, longitudeDelta: 0.8))
+                self.places = placesResult.places?.filter({ $0.coordinate != nil }) ?? []
             } catch {
                 self.error = error
             }
         }
-    }
-}
-
-class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
-    
-    @Published var location: CLLocationCoordinate2D?
-    
-    private let manager = CLLocationManager()
-
-    public static let shared = LocationManager()
-    
-    private override init() {
-        super.init()
-        manager.delegate = self
-        manager.desiredAccuracy = kCLLocationAccuracyBest
-        manager.startUpdatingLocation()
-    }
-
-    func requestLocation() {
-        manager.requestWhenInUseAuthorization()
-    }
-
-    
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        switch status {
-        case .authorizedAlways, .authorizedWhenInUse, .authorized:
-            print("Location granted")
-        default:
-            print("Location denied")
-        }
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        location = locations.last?.coordinate
     }
 }

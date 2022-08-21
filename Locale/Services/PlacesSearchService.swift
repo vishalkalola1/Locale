@@ -29,7 +29,8 @@ struct PlacesSearchService: NetworkService {
     
     var queryParameters: [URLQueryItem]? {
         [URLQueryItem(name: "ll", value: latLong),
-         URLQueryItem(name: "radius", value: radius)]
+         URLQueryItem(name: "radius", value: radius),
+        URLQueryItem(name: "limit", value: CommonMovieService.limit)]
     }
     
     var timeout: TimeInterval? {
