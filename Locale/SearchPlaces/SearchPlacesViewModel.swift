@@ -10,6 +10,22 @@ import NetworkProvider
 import Combine
 import MapKit.MKGeometry
 
+struct SearchRequest {
+    var latLong: String
+    var lastRadius: String
+    
+    init(latLong: String = "", lastRadius: String = "") {
+        self.latLong = latLong
+        self.lastRadius = lastRadius
+    }
+    
+    mutating func updateRadius(newRadius: String) {
+        if lastRadius != newRadius {
+            lastRadius = newRadius
+        }
+    }
+}
+
 final class SearchPlacesViewModel: ObservableObject {
     
     @Published var places: [Place] = []
@@ -18,8 +34,15 @@ final class SearchPlacesViewModel: ObservableObject {
     
     private let placesRepository: PlacesRepositoryProtocol
     private var cancellable: AnyCancellable?
+    private var searchRequest = SearchRequest()
     
-    public var locationManager: LocationManager {
+    init(placesRepository: PlacesRepositoryProtocol = PlacesRepository()) {
+        self.placesRepository = placesRepository
+        requestLocation()
+        configureLocationObserver()
+    }
+    
+    private var locationManager: LocationManager {
         LocationManager.shared
     }
     
@@ -27,34 +50,26 @@ final class SearchPlacesViewModel: ObservableObject {
         [.Map, .List]
     }
     
-    private var userLocation: String = ""
-    private var lastRadius: String = ""
+    var title: String {
+        "Search Places"
+    }
     
-    init(placesRepository: PlacesRepositoryProtocol = PlacesRepository()) {
-        self.placesRepository = placesRepository
+    private func requestLocation() {
         locationManager.requestLocation()
-        configureLocationObserver()
     }
     
-    func configureLocationObserver() {
-        cancellable = locationManager.$coordinate.sink { location in
-            guard let location = location else { return }
-            let latLong = "\(location.latitude),\(location.longitude)"
-            self.userLocation = latLong
+    private func configureLocationObserver() {
+        cancellable = locationManager.$coordinate.sink { [weak self] location in
+            guard let self = self, let location = location else { return }
+            self.searchRequest.latLong = location.latLong
             self.mapRegion = MKCoordinateRegion(center: location, span: MKCoordinateSpan(latitudeDelta: 0.8, longitudeDelta: 0.8))
-            self.searchPlaces(self.lastRadius)
-        }
-    }
-    
-    private func updateRadius(newRadius: String) {
-        if lastRadius != newRadius {
-            lastRadius = newRadius
+            self.searchPlaces(self.searchRequest.lastRadius)
         }
     }
     
     func searchPlaces(_ radius: String = "") {
-        updateRadius(newRadius: radius)
-        placesRepository.searchPlaces(by: radius, latLong: userLocation) { [weak self] results in
+        searchRequest.updateRadius(newRadius: radius)
+        placesRepository.searchPlaces(by: radius, latLong: searchRequest.latLong) { [weak self] results in
             guard let self = self else { return }
             do {
                 let placesResult = try results.get()

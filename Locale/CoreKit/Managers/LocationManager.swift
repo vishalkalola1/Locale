@@ -8,6 +8,12 @@
 import Foundation
 import CoreLocation
 
+extension CLLocationCoordinate2D {
+    var latLong: String {
+        "\(latitude),\(longitude)"
+    }
+}
+
 class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     @Published var coordinate: CLLocationCoordinate2D?

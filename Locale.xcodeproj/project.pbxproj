@@ -29,7 +29,8 @@
 		C9DA5F3328B23C52008D4FCF /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DA5F3228B23C52008D4FCF /* Navigation.swift */; };
 		C9DA5F3528B25165008D4FCF /* Segment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DA5F3428B25165008D4FCF /* Segment.swift */; };
 		C9DA5F3828B25F3F008D4FCF /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DA5F3728B25F3F008D4FCF /* LocationManager.swift */; };
-		C9DA5F4028B26000008D4FCF /* LocaleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DA5F3F28B26000008D4FCF /* LocaleTests.swift */; };
+		C9DA5F4028B26000008D4FCF /* SearchPlacesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DA5F3F28B26000008D4FCF /* SearchPlacesViewModelTests.swift */; };
+		C9DA5F4728B26635008D4FCF /* LocationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DA5F4628B26635008D4FCF /* LocationManagerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +68,8 @@
 		C9DA5F3428B25165008D4FCF /* Segment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segment.swift; sourceTree = "<group>"; };
 		C9DA5F3728B25F3F008D4FCF /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		C9DA5F3D28B26000008D4FCF /* LocaleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocaleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C9DA5F3F28B26000008D4FCF /* LocaleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaleTests.swift; sourceTree = "<group>"; };
+		C9DA5F3F28B26000008D4FCF /* SearchPlacesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlacesViewModelTests.swift; sourceTree = "<group>"; };
+		C9DA5F4628B26635008D4FCF /* LocationManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,7 +229,8 @@
 		C9DA5F3E28B26000008D4FCF /* LocaleTests */ = {
 			isa = PBXGroup;
 			children = (
-				C9DA5F3F28B26000008D4FCF /* LocaleTests.swift */,
+				C9DA5F3F28B26000008D4FCF /* SearchPlacesViewModelTests.swift */,
+				C9DA5F4628B26635008D4FCF /* LocationManagerTests.swift */,
 			);
 			path = LocaleTests;
 			sourceTree = "<group>";
@@ -363,7 +366,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9DA5F4028B26000008D4FCF /* LocaleTests.swift in Sources */,
+				C9DA5F4728B26635008D4FCF /* LocationManagerTests.swift in Sources */,
+				C9DA5F4028B26000008D4FCF /* SearchPlacesViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

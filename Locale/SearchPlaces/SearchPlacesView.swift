@@ -15,7 +15,7 @@ struct SearchPlacesView: View {
     @State private var selection: Segment.ViewStyle = .Map
     
     var body: some View {
-        Navigation(title: "Search Places", style: .inline) {
+        Navigation(title: viewModel.title, style: .inline) {
             VStack {
                 SearchView { radius in
                     viewModel.searchPlaces(radius)
