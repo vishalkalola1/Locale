@@ -17,7 +17,6 @@
 		C9A8FF2728AE8EB000CC40F2 /* PlacesSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A8FF2328AE8EB000CC40F2 /* PlacesSearchService.swift */; };
 		C9A8FF2928AE8EB000CC40F2 /* CommonServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A8FF2528AE8EB000CC40F2 /* CommonServices.swift */; };
 		C9A8FF2D28AE935100CC40F2 /* PlacesResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A8FF2C28AE935100CC40F2 /* PlacesResult.swift */; };
-		C9A8FF3428AE982B00CC40F2 /* NetworkProvider in Frameworks */ = {isa = PBXBuildFile; productRef = C9A8FF3328AE982B00CC40F2 /* NetworkProvider */; };
 		C9DA5F2128B23386008D4FCF /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DA5F2028B23386008D4FCF /* ImageView.swift */; };
 		C9DA5F2328B233DA008D4FCF /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DA5F2228B233DA008D4FCF /* CategoriesView.swift */; };
 		C9DA5F2528B23416008D4FCF /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DA5F2428B23416008D4FCF /* AddressView.swift */; };
@@ -31,6 +30,12 @@
 		C9DA5F3828B25F3F008D4FCF /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DA5F3728B25F3F008D4FCF /* LocationManager.swift */; };
 		C9DA5F4028B26000008D4FCF /* SearchPlacesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DA5F3F28B26000008D4FCF /* SearchPlacesViewModelTests.swift */; };
 		C9DA5F4728B26635008D4FCF /* LocationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DA5F4628B26635008D4FCF /* LocationManagerTests.swift */; };
+		C9DA5F5A28B26DC4008D4FCF /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DA5F5428B26DC4008D4FCF /* NetworkService.swift */; };
+		C9DA5F5B28B26DC4008D4FCF /* NetworkProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DA5F5528B26DC4008D4FCF /* NetworkProviderProtocol.swift */; };
+		C9DA5F5C28B26DC4008D4FCF /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DA5F5628B26DC4008D4FCF /* Error.swift */; };
+		C9DA5F5D28B26DC4008D4FCF /* SessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DA5F5728B26DC4008D4FCF /* SessionProtocol.swift */; };
+		C9DA5F5E28B26DC4008D4FCF /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DA5F5828B26DC4008D4FCF /* Session.swift */; };
+		C9DA5F5F28B26DC4008D4FCF /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DA5F5928B26DC4008D4FCF /* Environment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +60,6 @@
 		C9A8FF2328AE8EB000CC40F2 /* PlacesSearchService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesSearchService.swift; sourceTree = "<group>"; };
 		C9A8FF2528AE8EB000CC40F2 /* CommonServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonServices.swift; sourceTree = "<group>"; };
 		C9A8FF2C28AE935100CC40F2 /* PlacesResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesResult.swift; sourceTree = "<group>"; };
-		C9A8FF3528AE986200CC40F2 /* NetworkProvider */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = NetworkProvider; path = Packages/NetworkProvider; sourceTree = "<group>"; };
 		C9DA5F2028B23386008D4FCF /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		C9DA5F2228B233DA008D4FCF /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
 		C9DA5F2428B23416008D4FCF /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
@@ -70,6 +74,12 @@
 		C9DA5F3D28B26000008D4FCF /* LocaleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocaleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9DA5F3F28B26000008D4FCF /* SearchPlacesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlacesViewModelTests.swift; sourceTree = "<group>"; };
 		C9DA5F4628B26635008D4FCF /* LocationManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerTests.swift; sourceTree = "<group>"; };
+		C9DA5F5428B26DC4008D4FCF /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		C9DA5F5528B26DC4008D4FCF /* NetworkProviderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkProviderProtocol.swift; sourceTree = "<group>"; };
+		C9DA5F5628B26DC4008D4FCF /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		C9DA5F5728B26DC4008D4FCF /* SessionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionProtocol.swift; sourceTree = "<group>"; };
+		C9DA5F5828B26DC4008D4FCF /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		C9DA5F5928B26DC4008D4FCF /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +87,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9A8FF3428AE982B00CC40F2 /* NetworkProvider in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,7 +103,6 @@
 		C96E940728AE8AA1000ED6D2 = {
 			isa = PBXGroup;
 			children = (
-				C9A8FF3128AE981F00CC40F2 /* Packages */,
 				C96E941228AE8AA1000ED6D2 /* Locale */,
 				C9DA5F3E28B26000008D4FCF /* LocaleTests */,
 				C96E941128AE8AA1000ED6D2 /* Products */,
@@ -155,6 +163,12 @@
 		C9A8FF1B28AE8C0100CC40F2 /* NetworkProvider */ = {
 			isa = PBXGroup;
 			children = (
+				C9DA5F5928B26DC4008D4FCF /* Environment.swift */,
+				C9DA5F5628B26DC4008D4FCF /* Error.swift */,
+				C9DA5F5528B26DC4008D4FCF /* NetworkProviderProtocol.swift */,
+				C9DA5F5428B26DC4008D4FCF /* NetworkService.swift */,
+				C9DA5F5828B26DC4008D4FCF /* Session.swift */,
+				C9DA5F5728B26DC4008D4FCF /* SessionProtocol.swift */,
 				C9A8FF2028AE8D8500CC40F2 /* NetworkProvider.swift */,
 			);
 			path = NetworkProvider;
@@ -182,14 +196,6 @@
 			children = (
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		C9A8FF3128AE981F00CC40F2 /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-				C9A8FF3528AE986200CC40F2 /* NetworkProvider */,
-			);
-			name = Packages;
 			sourceTree = "<group>";
 		};
 		C9DA5F1E28B23355008D4FCF /* CoreKit */ = {
@@ -252,7 +258,6 @@
 			);
 			name = Locale;
 			packageProductDependencies = (
-				C9A8FF3328AE982B00CC40F2 /* NetworkProvider */,
 			);
 			productName = Locale;
 			productReference = C96E941028AE8AA1000ED6D2 /* Locale.app */;
@@ -343,6 +348,7 @@
 				C96E941628AE8AA1000ED6D2 /* SearchPlacesView.swift in Sources */,
 				C9DA5F3528B25165008D4FCF /* Segment.swift in Sources */,
 				C9A8FF1A28AE8BEC00CC40F2 /* PlacesRepository.swift in Sources */,
+				C9DA5F5D28B26DC4008D4FCF /* SessionProtocol.swift in Sources */,
 				C96E941428AE8AA1000ED6D2 /* LocaleApp.swift in Sources */,
 				C9A8FF1728AE8BAB00CC40F2 /* SearchPlacesViewModel.swift in Sources */,
 				C9A8FF2928AE8EB000CC40F2 /* CommonServices.swift in Sources */,
@@ -350,12 +356,17 @@
 				C9A8FF2728AE8EB000CC40F2 /* PlacesSearchService.swift in Sources */,
 				C9DA5F2528B23416008D4FCF /* AddressView.swift in Sources */,
 				C9DA5F3328B23C52008D4FCF /* Navigation.swift in Sources */,
+				C9DA5F5A28B26DC4008D4FCF /* NetworkService.swift in Sources */,
 				C9DA5F2128B23386008D4FCF /* ImageView.swift in Sources */,
+				C9DA5F5B28B26DC4008D4FCF /* NetworkProviderProtocol.swift in Sources */,
 				C9A8FF2128AE8D8500CC40F2 /* NetworkProvider.swift in Sources */,
+				C9DA5F5C28B26DC4008D4FCF /* Error.swift in Sources */,
 				C9DA5F2328B233DA008D4FCF /* CategoriesView.swift in Sources */,
 				C9DA5F2D28B234F1008D4FCF /* PinPopover.swift in Sources */,
 				C9DA5F2F28B23542008D4FCF /* SearchView.swift in Sources */,
+				C9DA5F5F28B26DC4008D4FCF /* Environment.swift in Sources */,
 				C9DA5F2B28B234A3008D4FCF /* MapPinDetails.swift in Sources */,
+				C9DA5F5E28B26DC4008D4FCF /* Session.swift in Sources */,
 				C9A8FF2D28AE935100CC40F2 /* PlacesResult.swift in Sources */,
 				C9DA5F3828B25F3F008D4FCF /* LocationManager.swift in Sources */,
 				C9DA5F2928B23471008D4FCF /* MapDetails.swift in Sources */,
@@ -623,13 +634,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		C9A8FF3328AE982B00CC40F2 /* NetworkProvider */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = NetworkProvider;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C96E940828AE8AA1000ED6D2 /* Project object */;
 }
