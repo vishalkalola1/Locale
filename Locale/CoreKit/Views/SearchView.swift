@@ -11,6 +11,7 @@ import SwiftUI
 struct SearchView: View {
     
     @State private var text: String = ""
+    @FocusState private var isFocused: Bool
     
     var action: (String) -> Void
     
@@ -20,12 +21,22 @@ struct SearchView: View {
     
     var body: some View {
         HStack {
-            TextField("Enter radius to search near places", text: $text)
-                .padding(5)
-                .background(.gray.opacity(0.1))
-                .cornerRadius(10)
+            HStack {
+                TextField("Enter radius to search near by places", text: $text)
+                    .padding(.vertical, 8)
+                    .keyboardType(.numberPad)
+                    .focused($isFocused)
+                Image(systemName: "xmark.circle")
+                    .onTapGesture {
+                        self.text = ""
+                    }
+            }
+            .padding(.horizontal, 8)
+            .background(.gray.opacity(0.1))
+            .cornerRadius(15)
             Button("Search") {
                 action(text)
+                isFocused = false
             }
         }.padding(.horizontal, 5)
     }
