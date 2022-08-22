@@ -2,8 +2,6 @@
 
 # iOS assignment | Locale
 
-## Questions
-
 1. High-level review of the application.
 - Created file structure as per features and includes files(view, viewmodel, subviews..) into one group
 - Used MVVM architecture with SOLID principles
